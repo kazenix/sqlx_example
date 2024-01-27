@@ -2,7 +2,7 @@ mod database;
 
 use database::Database;
 
-use database::create_thing::Thing;
+use database::Thing;
 
 type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
 

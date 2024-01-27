@@ -5,6 +5,8 @@ use sqlx::sqlite::{SqliteConnectOptions, SqlitePool};
 use crate::Error;
 
 pub mod create_thing;
+pub mod delete_thing;
+pub mod list_things;
 
 pub struct Database {
     pool: SqlitePool,
@@ -26,4 +28,9 @@ impl Database {
 
         Ok(())
     }
+}
+
+#[derive(Debug, sqlx::FromRow)]
+pub struct Thing {
+    pub id: i64,
 }

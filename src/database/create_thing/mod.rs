@@ -1,10 +1,5 @@
 use super::*;
 
-#[derive(Debug, sqlx::FromRow)]
-pub struct Thing {
-    pub id: i64,
-}
-
 impl Database {
     pub async fn create_thing(&self, arg1: Thing) -> Result<Thing, Error> {
         // I use a separate file for my sql here using include_str so I get better
